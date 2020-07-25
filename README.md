@@ -6,6 +6,42 @@ against a human. The code is written in Python using the [python-chess](https://
 ### Usage
 On your local machine, clone the repository by typing:
 >`git clone https://github.com/Ajay-Chopra/chess-ai.git`
+In order to run the program, you will need to have python-chess installed. This can be done with:
+>`pip install python-chess`
+Once you have the necessary libraries installed run the program with the following commands:
+>`cd chess-ai`
+>`python chess_ai.py`
+You should see a starting chess board and a welcome message:
+>`WELCOME TO CHESS
+---------------------------------------------------------------------
+Enter moves in the form: r1f1r2f2
+For example if you wanted to move from F2 to F3 you would type f2f3
+---------------------------------------------------------------------
+r n b q k b n r
+p p p p p p p p
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B N R
+---------------------------------------------------------------------
+Please enter a move. Type DONE when finished`
+By default you are playing as the uppercase pieces. Simply enter your move and the program should handle it from there!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
