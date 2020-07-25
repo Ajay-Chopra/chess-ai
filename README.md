@@ -5,7 +5,7 @@ against a human. The code is written in Python using the [python-chess](https://
 
 ### Usage
 On your local machine, clone the repository by typing:
-`git clone `
+>`git clone https://github.com/Ajay-Chopra/chess-ai.git`
 
 
 
