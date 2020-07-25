@@ -14,7 +14,7 @@ pip install python-chess
 ```
 Once you have the necessary libraries installed run the program with the following commands:
 ```console
-cd chess-ai`
+cd chess-ai
 python chess_ai.py
 ```
 You should see a starting chess board and a welcome message:
