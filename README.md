@@ -48,6 +48,27 @@ chess.ipynb file. We can use an SVG component to display the board like so:
 
 
 
+### Theory
+In order to create my chess AI, I utilize both a board evaluation algorithm and a search algorithm. 
+Board evaluation is based on first valuing the total "material" a player has on the board (i.e. assigning weights
+to each piece and calculating a player's total material by summing all the pieces multiplied by their weights).
+The second step is evaluating the positions of the pieces. This is done using piece-square tables. If you would like 
+to know more about how weights and piece-square tables are calculated you can visit this [link](https://www.chessprogramming.org/Piece-Square_Tables).
+
+In order to search for the best move among all possible choices, I use the minimax algorithm with alpha-beta pruning. 
+More information on the algorithm can be found on [Wikipedia](https://en.wikipedia.org/wiki/Minimax).
+
+### Next Steps
+Future plans for this project center around assigning better weights to pieces and creating more accurate piece-square tables.
+In order to do this, I will need to extensively test my program to measure its performance. Some have used [Stockfish](https://stockfishchess.org/) 
+for this purpose. I would also like to take a look at improving the search algorithm so that it is not constrained by a certain depth, 
+a problem often referred to as the [Horizon Effect](https://www.chessprogramming.org/Horizon_Effect). 
+
+
+
+
+
+
 
 
 
