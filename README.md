@@ -37,6 +37,11 @@ Please enter a move. Type DONE when finished
 ```
 By default you are playing as the uppercase pieces. Simply enter your move and the program should handle it from there!
 
+##### Using the Jupyter Notebook
+If you desire a more elaborate chessboard representation and you have jupyterlab installed, you can use the
+chess.ipynb file. We can use an SVG component to display the board like so:
+
+
 
 
 
