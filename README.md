@@ -40,6 +40,10 @@ By default you are playing as the uppercase pieces. Simply enter your move and t
 ##### Using the Jupyter Notebook
 If you desire a more elaborate chessboard representation and you have jupyterlab installed, you can use the
 chess.ipynb file. We can use an SVG component to display the board like so:
+
+
+
+
 ![Chess Board Image](assets/1_nH4AerChS2uPEy4igMIshw.png)
 
 
