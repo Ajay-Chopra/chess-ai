@@ -56,13 +56,18 @@ The second step is evaluating the positions of the pieces. This is done using pi
 to know more about how weights and piece-square tables are calculated you can visit this [link](https://www.chessprogramming.org/Piece-Square_Tables).
 
 In order to search for the best move among all possible choices, I use the minimax algorithm with alpha-beta pruning. 
-More information on the algorithm can be found on [Wikipedia](https://en.wikipedia.org/wiki/Minimax).
+More information on the algorithm can be found on [Wikipedia](https://en.wikipedia.org/wiki/Minimax). One common issue with such
+tree-based search alogirhtms is that they are often constrained by a certain depth as the number of possible moves becomes larger and 
+larger. This leads to an issue when evaluating the board state on the leaves of the tree. For instance, perhaps a leaf move on the 
+tree has you capturing the opponent's pawn with your queen, which might give a +1 evaluation. However, the next move might very well be
+your opponent capturing your queen with a pawn, which could give an extremely negative evaluation. If the program had stopped its 
+search after capturing the pawn, it might decide to go down this path. Hence, we need to evaluate all capture moves to see if they lead
+to any unfavorable outcomes. This can be done with a so-called "quiescence search." You can read about quiescence search [here](https://www.chessprogramming.org/Quiescence_Search) or watch this very helpful YouTube [video](https://www.youtube.com/watch?v=BKY4xmVJaOA).
 
 ### Next Steps
 Future plans for this project center around assigning better weights to pieces and creating more accurate piece-square tables.
 In order to do this, I will need to extensively test my program to measure its performance. Some have used [Stockfish](https://stockfishchess.org/) 
-for this purpose. I would also like to take a look at improving the search algorithm so that it is not constrained by a certain depth, 
-a problem often referred to as the [Horizon Effect](https://www.chessprogramming.org/Horizon_Effect). 
+for this purpose, which I plan to do as well.
 
 
 
