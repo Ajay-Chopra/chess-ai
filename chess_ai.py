@@ -72,7 +72,7 @@ def minimax(board, depth, alpha, beta, maximizingPlayer):
     Use alpha-beta pruning to delete extraenous branches to reduce search time
     '''
     if depth == 0 or board.is_game_over():
-        return evaluate_board(board), chess.Move.null()
+        return quiet_search(board, alpha, beta), chess.Move.null()
     elif maximizingPlayer:
         max_val = -10000
         best_move = None
@@ -103,6 +103,28 @@ def minimax(board, depth, alpha, beta, maximizingPlayer):
         return min_val, best_move
 
 
+def quiet_search(board, alpha, beta):
+    '''
+    Perform a depth first search of all capture moves
+    '''
+    stand_pat = evaluate_board(board)
+    if stand_pat >= beta:
+        return beta
+    if alpha < stand_pat:
+        alpha = stand_pat
+
+    for move in board.legal_moves:
+        if board.is_capture(move):
+            board.push(move)
+            score = -quiet_search(board, -alpha, -beta)
+            board.pop()
+
+            if (score >= beta):
+                return beta
+
+            if (score > alpha):
+                alpha = score
+    return alpha
 
 def make_ai_move(board):
     '''
@@ -112,12 +134,7 @@ def make_ai_move(board):
     board.push(move)
 
 
-
-
 def run_game():
-    '''
-    Run the game with a fresh board
-    '''
     print("WELCOME TO CHESS")
     print("---------------------------------------------------------------------")
     print("Enter moves in the form: r1f1r2f2")
@@ -127,7 +144,7 @@ def run_game():
     print(board)
     print("---------------------------------------------------------------------")
     while True:
-        print("Please enter a move. Type DONE when finished")
+        print("Please enter a move. Press ENTER when finished")
         for line in sys.stdin:
             if line.strip() == 'DONE':
                 break
@@ -149,6 +166,4 @@ def run_game():
                     break
                 else:
                     print("This is not a legal move")
-
-
 run_game()
